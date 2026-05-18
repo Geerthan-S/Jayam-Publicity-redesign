@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a0a08">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Jayam Publicity">
@@ -11,50 +13,1058 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <noscript><style>#preloader{display:none}.reveal{opacity:1;transform:none}body{overflow:auto}</style></noscript>
+  <noscript>
+    <style>
+      #preloader {
+        display: none
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none
+      }
+
+      body {
+        overflow: auto
+      }
+    </style>
+  </noscript>
   <title>About | Jayam Publicity</title>
-  <meta name="description" content="Learn about Jayam Publicity, Pondicherry's experienced OOH agency with cross-functional advertising, regulatory, media advisory, and advocacy capabilities.">
+  <meta name="description"
+    content="Learn about Jayam Publicity, Pondicherry's experienced OOH agency with cross-functional advertising, regulatory, media advisory, and advocacy capabilities.">
   <meta property="og:title" content="About Jayam Publicity">
-  <meta name="twitter:title" content="About Jayam Publicity"><meta property="og:description" content="25+ years of making Pondicherry look different.">
-  <meta name="twitter:description" content="25+ years of making Pondicherry look different."><meta property="og:image" content="https://jayampublicity.com/og-cover.jpg"><meta property="og:url" content="https://jayampublicity.com/about.html"><link rel="canonical" href="https://jayampublicity.com/about.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+  <meta name="twitter:title" content="About Jayam Publicity">
+  <meta property="og:description" content="25+ years of making Pondicherry look different.">
+  <meta name="twitter:description" content="25+ years of making Pondicherry look different.">
+  <meta property="og:image" content="https://jayampublicity.com/og-cover.jpg">
+  <meta property="og:url" content="https://jayampublicity.com/about.html">
+  <link rel="canonical" href="https://jayampublicity.com/about.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&family=Inter:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       ABOUT PAGE – SCOPED ENHANCEMENT STYLES
+       All selectors are prefixed with .about-page or use IDs
+       to guarantee zero bleed to other pages.
+  ═══════════════════════════════════════════════════════════ -->
+  <style>
+    /* ── Hero override ────────────────────────────────────────── */
+    .about-page .page-hero {
+      padding: 100px 0 80px;
+      background:
+        radial-gradient(ellipse 70% 60% at 88% -10%, rgba(232, 67, 26, 0.38), transparent),
+        radial-gradient(ellipse 50% 40% at 10% 110%, rgba(245, 166, 35, 0.14), transparent),
+        linear-gradient(rgba(245, 240, 232, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 240, 232, 0.035) 1px, transparent 1px),
+        var(--bg);
+      background-size: auto, auto, 52px 52px, 52px 52px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-page .page-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, var(--bg) 100%);
+      pointer-events: none;
+    }
+
+    /* floating decorative year label */
+    .about-hero-year {
+      position: absolute;
+      right: clamp(20px, 6vw, 120px);
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-head);
+      font-size: clamp(7rem, 18vw, 18rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(232, 67, 26, 0.22);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .about-page .page-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* animated underline on the h1 */
+    .about-hero-h1 span {
+      position: relative;
+      display: inline;
+    }
+
+    .about-hero-h1 span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 4px;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--red), var(--amber));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
+    }
+
+    .about-hero-h1.is-visible span::after {
+      transform: scaleX(1);
+    }
+
+    /* ── Milestone ribbon ──────────────────────────────────────── */
+    #about-milestones {
+      padding: 56px 0;
+      border-block: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(232, 67, 26, 0.06), transparent 60%);
+      overflow: hidden;
+    }
+
+    .about-milestone-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .about-milestone {
+      padding: 32px 28px;
+      background: var(--card);
+      position: relative;
+      transition: background 0.25s ease;
+    }
+
+    .about-milestone:hover {
+      background: #1a1a14;
+    }
+
+    .about-milestone::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--amber));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .about-milestone:hover::before {
+      transform: scaleX(1);
+    }
+
+    .about-milestone-num {
+      font-family: var(--font-head);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, var(--cream) 40%, var(--amber));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+    }
+
+    .about-milestone-label {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .about-milestone-desc {
+      display: block;
+      margin-top: 6px;
+      color: rgba(245, 240, 232, 0.5);
+      font-size: 0.82rem;
+    }
+
+    /* ── Who We Are split layout ──────────────────────────────── */
+    #about-who {
+      padding: 100px 0;
+    }
+
+    .about-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .about-split-left {
+      position: sticky;
+      top: 110px;
+    }
+
+    .about-split-left h2 {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      margin: 0 0 24px;
+    }
+
+    .about-left-accent {
+      width: 56px;
+      height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--red), var(--amber));
+      margin-bottom: 24px;
+    }
+
+    .about-split-left p {
+      color: rgba(245, 240, 232, 0.68);
+      font-size: 1.08rem;
+      line-height: 1.7;
+      margin: 0 0 28px;
+    }
+
+    /* visual card for left side */
+    .about-visual-card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      padding: 24px;
+      margin-top: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-visual-card::before {
+      content: "OOH";
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      font-family: var(--font-head);
+      font-size: 6rem;
+      font-weight: 800;
+      color: rgba(232, 67, 26, 0.08);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .about-vc-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .about-vc-tag {
+      border: 1px solid rgba(232, 67, 26, 0.3);
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--amber);
+      background: rgba(232, 67, 26, 0.06);
+    }
+
+    /* right side articles */
+    .about-articles {
+      display: grid;
+      gap: 16px;
+    }
+
+    .about-article {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .about-article:hover {
+      border-color: rgba(232, 67, 26, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .about-article-num {
+      position: absolute;
+      right: 20px;
+      top: 16px;
+      font-family: var(--font-head);
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: rgba(245, 240, 232, 0.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .about-article h3 {
+      margin: 0 0 12px;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about-article-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(232, 67, 26, 0.12);
+      color: var(--red);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .about-article p {
+      margin: 0;
+      color: rgba(245, 240, 232, 0.65);
+      line-height: 1.7;
+    }
+
+    /* ── Values reimagined ─────────────────────────────────────── */
+    #about-values {
+      padding: 100px 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(232, 67, 26, 0.06), transparent),
+        var(--bg);
+    }
+
+    .about-values-head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .about-values-head h2 {
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+    }
+
+    .about-values-head p {
+      color: var(--muted);
+      max-width: 500px;
+      margin: 16px auto 0;
+    }
+
+    .about-values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .about-value-card {
+      padding: 36px 28px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .about-value-card:hover {
+      border-color: rgba(245, 166, 35, 0.35);
+      transform: translateY(-4px);
+    }
+
+    .about-value-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      background: radial-gradient(circle at 50% 0%, rgba(232, 67, 26, 0.1), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .about-value-card:hover::after {
+      opacity: 1;
+    }
+
+    .about-value-num {
+      font-family: var(--font-head);
+      font-size: 4.5rem;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, rgba(232, 67, 26, 0.8), rgba(245, 166, 35, 0.5));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .about-value-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+    }
+
+    .about-value-card p {
+      margin: 0;
+      color: rgba(245, 240, 232, 0.6);
+      line-height: 1.65;
+    }
+
+    /* ── What we do (capability table) ────────────────────────── */
+    #about-capabilities {
+      padding: 100px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .about-cap-head {
+      margin-bottom: 48px;
+    }
+
+    .about-cap-head h2 {
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      margin: 0 0 16px;
+    }
+
+    .about-cap-head p {
+      color: var(--muted);
+      max-width: 560px;
+    }
+
+    .about-cap-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .about-cap-item {
+      display: flex;
+      gap: 18px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      transition: border-color 0.25s ease;
+    }
+
+    .about-cap-item:hover {
+      border-color: rgba(232, 67, 26, 0.35);
+    }
+
+    .about-cap-dot {
+      flex-shrink: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--red);
+      margin-top: 6px;
+      box-shadow: 0 0 10px rgba(232, 67, 26, 0.5);
+    }
+
+    .about-cap-text h4 {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      margin: 0 0 6px;
+    }
+
+    .about-cap-text p {
+      margin: 0;
+      color: rgba(245, 240, 232, 0.58);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* ── CTA strip (about-specific) ───────────────────────────── */
+    #about-cta {
+      padding: 80px 0;
+      background:
+        radial-gradient(ellipse 50% 80% at 90% 50%, rgba(245, 166, 35, 0.22), transparent),
+        linear-gradient(135deg, rgba(232, 67, 26, 0.95), #b82e0d);
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #about-cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    #about-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    #about-cta h2 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin: 0 0 16px;
+      max-width: 700px;
+      margin-inline: auto;
+    }
+
+    #about-cta p {
+      opacity: 0.82;
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+
+    #about-cta .btn {
+      background: #fff;
+      color: var(--red);
+      font-weight: 800;
+    }
+
+    #about-cta .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    #about-cta .btn-outline {
+      border-color: rgba(255, 255, 255, 0.4);
+      background: transparent;
+      color: #fff;
+    }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .about-milestone-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-split {
+        grid-template-columns: 1fr;
+      }
+
+      .about-split-left {
+        position: static;
+      }
+
+      .about-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-hero-year {
+        display: none;
+      }
+
+      .about-milestone-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-cap-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #about-who,
+      #about-values,
+      #about-capabilities {
+        padding: 70px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .about-milestone-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://jayampublicity.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "About",
-      "item": "https://jayampublicity.com/about.html"
-    }
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://jayampublicity.com/"},
+    {"@type":"ListItem","position":2,"name":"About","item":"https://jayampublicity.com/about.html"}
   ]
 }
   </script>
 </head>
-<body>
-  <header class="site-header"><nav class="nav"><a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.svg" alt="Jayam Publicity"></a><div class="nav-links"><a data-nav href="services.html">Services</a><a data-nav href="about.html">About</a><a data-nav href="clients.html">Clients</a><a data-nav href="process.html">Process</a><a data-nav href="media-advisory.html">Media Advisory</a><a data-nav href="contact.html">Contact</a></div><div class="nav-actions"><a class="btn btn-red" href="contact.html">Get a Quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div></nav></header>
-  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="index.html">Home</a><span>/</span><span>About</span></div></nav>
+
+<body class="about-page">
+
+  <!-- ── Preloader (unchanged, shared) ─────────────────────── -->
+  <div id="preloader">
+    <div class="pre-logo">
+      <span>J</span><span>A</span><span>Y</span><span>A</span><span>M</span>
+    </div>
+    <p class="pre-sub">PUBLICITY</p>
+    <div class="pre-bar-track">
+      <div class="pre-bar"></div>
+    </div>
+    <p class="pre-tagline">PONDICHERRY'S OOH SPECIALISTS</p>
+  </div>
+
+  <!-- ── Header (unchanged) ────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="assets/logo.svg" alt="Jayam Publicity">
+      </a>
+      <div class="nav-links">
+        <a data-nav href="services.html">Services</a>
+        <a data-nav href="about.html">About</a>
+        <a data-nav href="clients.html">Clients</a>
+        <a data-nav href="process.html">Process</a>
+        <a data-nav href="media-advisory.html">Media Advisory</a>
+        <a data-nav href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-red" href="contact.html">Get a Quote</a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ── Breadcrumb ─────────────────────────────────────────── -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="index.html">Home</a><span>/</span><span>About</span>
+    </div>
+  </nav>
+
   <main>
-    <section class="page-hero"><div class="container narrow reveal"><p class="eyebrow">About</p><h1>25+ Years of Making Pondicherry Look Different</h1><p class="lead">Jayam Publicity exists to make brands visible, credible, and memorable across the streets, media channels, and public spaces that shape Pondicherry.</p></div></section>
-    <section class="section"><div class="container copy-block">
-      <article class="reveal"><h2>Who We Are</h2><p>Jayam Publicity is a team of professionals with collective experience across outdoor advertising, regulatory-marketing interfaces, and client-specific campaign planning. Our cross-functional associates are our strength: they help brands penetrate markets, resolve placement challenges, and create practical out-of-box visibility solutions.</p></article>
-      <article class="reveal"><h2>Our Leverage</h2><p>We work at the intersection of brands, public spaces, government processes, vendors, and media owners. That means campaigns are not just designed well; they are placed intelligently, produced cleanly, and handled with awareness of permissions, timing, and ground realities.</p></article>
-      <article class="reveal"><h2>Media Advisory</h2><p>Jayam supports monitoring of print and web media, media clips, dossiers, and impact reports. This advisory capability helps government bodies, institutions, and corporates understand how coverage is moving and where communication needs sharper representation.</p></article>
-      <article class="reveal"><h2>Multi-Constituent Solutions</h2><p>We work with market segments, press groups, pressure groups, regulatory authorities, and affiliate partners to formulate effective user-interface strategies. These client-specific strategies support space advocacy, market entry, corporate communication, public relations, image branding, community outreach, CSR initiatives, information services, and precise media placement.</p></article>
-      <article class="reveal"><h2>Space Advocacy</h2><p>Outdoor advertising is about more than finding a surface. Jayam helps brands identify the spaces, timings, and constituent relationships that make visibility legitimate, durable, and effective.</p></article>
-      <article class="reveal"><h2>Leadership &amp; Team</h2><p>Jayam is built around 25+ years of Pondicherry market understanding, on-ground execution experience, vendor coordination, and regulatory awareness. The company works through a practical team model that brings together media planners, production partners, installation crews, and client servicing professionals for every campaign.</p></article>
-      <div class="grid grid-3"><article class="value-card reveal"><h3>Precision</h3><p>Media placement matched to audience, geography, and business goal.</p></article><article class="value-card reveal"><h3>Reach</h3><p>Formats that cover static, mobile, print, cinema, retail, and digital touchpoints.</p></article><article class="value-card reveal"><h3>Impact</h3><p>Campaigns designed to be seen, remembered, and acted on.</p></article></div>
-    </div></section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         1. HERO
+    ══════════════════════════════════════════════════════════ -->
+    <section class="page-hero">
+      <div class="about-hero-year" aria-hidden="true">1999</div>
+      <div class="container narrow reveal">
+        <p class="eyebrow">About Jayam Publicity</p>
+        <h1 class="about-hero-h1">
+          25+ Years of Making<br>
+          <span>Pondicherry Look Different</span>
+        </h1>
+        <p class="lead">
+          From hoardings at busy junctions to media advisory for institutions —
+          Jayam exists to make brands visible, credible, and memorable across every
+          public space that shapes Pondicherry.
+        </p>
+        <div class="hero-actions" style="margin-top:34px;">
+          <a class="btn btn-red" href="services.html">Explore Services</a>
+          <a class="btn btn-outline" href="contact.html">Talk to Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         2. MILESTONE NUMBERS
+    ══════════════════════════════════════════════════════════ -->
+    <section id="about-milestones">
+      <div class="container">
+        <div class="about-milestone-grid">
+
+          <div class="about-milestone reveal">
+            <strong class="about-milestone-num" data-count="25" data-suffix="+">25+</strong>
+            <span class="about-milestone-label">Years of Operation</span>
+            <span class="about-milestone-desc">Continuously active since 1999 in Pondicherry's OOH market</span>
+          </div>
+
+          <div class="about-milestone reveal">
+            <strong class="about-milestone-num" data-count="500" data-suffix="+">500+</strong>
+            <span class="about-milestone-label">Campaigns Executed</span>
+            <span class="about-milestone-desc">Across outdoor, transit, print, and digital touchpoints</span>
+          </div>
+
+          <div class="about-milestone reveal">
+            <strong class="about-milestone-num" data-count="13" data-suffix="">13</strong>
+            <span class="about-milestone-label">Formats Available</span>
+            <span class="about-milestone-desc">From hoardings and medians to cinema and digital marketing</span>
+          </div>
+
+          <div class="about-milestone reveal">
+            <strong class="about-milestone-num" data-count="32" data-suffix="+">32+</strong>
+            <span class="about-milestone-label">Industry Segments Served</span>
+            <span class="about-milestone-desc">FMCG, healthcare, education, government, retail and more</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         3. WHO WE ARE – sticky left + scroll right
+    ══════════════════════════════════════════════════════════ -->
+    <section id="about-who">
+      <div class="container">
+        <div class="about-split">
+
+          <!-- LEFT: sticky summary -->
+          <div class="about-split-left reveal">
+            <p class="eyebrow">Who We Are</p>
+            <h2>Built at the Intersection of Brands and Public Spaces</h2>
+            <div class="about-left-accent"></div>
+            <p>
+              Jayam Publicity is a team of professionals with collective experience across
+              outdoor advertising, regulatory-marketing interfaces, and client-specific
+              campaign planning.
+            </p>
+            <p>
+              Our cross-functional associates are our strength: they help brands penetrate
+              markets, resolve placement challenges, and create practical out-of-box
+              visibility solutions.
+            </p>
+
+            <!-- visual accent card -->
+            <div class="about-visual-card">
+              <p style="margin:0 0 4px; font-weight:700; font-family:var(--font-head); font-size:1.1rem;">Our formats
+                span</p>
+              <div class="about-vc-row">
+                <span class="about-vc-tag">Outdoor</span>
+                <span class="about-vc-tag">Transit</span>
+                <span class="about-vc-tag">Print</span>
+                <span class="about-vc-tag">Cinema</span>
+                <span class="about-vc-tag">Digital</span>
+                <span class="about-vc-tag">Retail</span>
+                <span class="about-vc-tag">Events</span>
+                <span class="about-vc-tag">Advisory</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: scrolling articles -->
+          <div class="about-articles">
+
+            <div class="about-article reveal">
+              <span class="about-article-num" aria-hidden="true">01</span>
+              <h3>
+                <span class="about-article-icon">⚡</span>
+                Our Leverage
+              </h3>
+              <p>
+                We work at the intersection of brands, public spaces, government processes,
+                vendors, and media owners. Campaigns are not just designed well — they are
+                placed intelligently, produced cleanly, and handled with awareness of
+                permissions, timing, and ground realities.
+              </p>
+            </div>
+
+            <div class="about-article reveal">
+              <span class="about-article-num" aria-hidden="true">02</span>
+              <h3>
+                <span class="about-article-icon">📊</span>
+                Media Advisory
+              </h3>
+              <p>
+                Jayam supports monitoring of print and web media, media clips, dossiers,
+                and impact reports. This advisory capability helps government bodies,
+                institutions, and corporates understand how coverage is moving and where
+                communication needs sharper representation.
+              </p>
+            </div>
+
+            <div class="about-article reveal">
+              <span class="about-article-num" aria-hidden="true">03</span>
+              <h3>
+                <span class="about-article-icon">🤝</span>
+                Multi-Constituent Solutions
+              </h3>
+              <p>
+                We work with market segments, press groups, pressure groups, regulatory
+                authorities, and affiliate partners to formulate effective user-interface
+                strategies — supporting space advocacy, market entry, corporate
+                communication, public relations, image branding, community outreach,
+                CSR initiatives, information services, and precise media placement.
+              </p>
+            </div>
+
+            <div class="about-article reveal">
+              <span class="about-article-num" aria-hidden="true">04</span>
+              <h3>
+                <span class="about-article-icon">📍</span>
+                Space Advocacy
+              </h3>
+              <p>
+                Outdoor advertising is about more than finding a surface. Jayam helps
+                brands identify the spaces, timings, and constituent relationships that
+                make visibility legitimate, durable, and effective.
+              </p>
+            </div>
+
+            <div class="about-article reveal">
+              <span class="about-article-num" aria-hidden="true">05</span>
+              <h3>
+                <span class="about-article-icon">🏛️</span>
+                Leadership &amp; Team
+              </h3>
+              <p>
+                Jayam is built around 25+ years of Pondicherry market understanding,
+                on-ground execution experience, vendor coordination, and regulatory
+                awareness — working through a practical team model that brings together
+                media planners, production partners, installation crews, and client
+                servicing professionals for every campaign.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         4. CORE VALUES (enhanced cards)
+    ══════════════════════════════════════════════════════════ -->
+    <section id="about-values">
+      <div class="container">
+        <div class="about-values-head reveal">
+          <p class="eyebrow">Our Core Values</p>
+          <h2>What Drives Every Campaign</h2>
+          <p>Three principles guide how we plan, place, and measure every piece of work we do.</p>
+        </div>
+
+        <div class="about-values-grid">
+
+          <div class="about-value-card reveal">
+            <span class="about-value-num" aria-hidden="true">01</span>
+            <h3>Precision</h3>
+            <p>
+              Media placement matched to audience, geography, and business goal.
+              Every location, every format, every timing decision is deliberate.
+            </p>
+          </div>
+
+          <div class="about-value-card reveal">
+            <span class="about-value-num" aria-hidden="true">02</span>
+            <h3>Reach</h3>
+            <p>
+              Formats that cover static, mobile, print, cinema, retail, and digital
+              touchpoints — giving brands continuous presence wherever people move.
+            </p>
+          </div>
+
+          <div class="about-value-card reveal">
+            <span class="about-value-num" aria-hidden="true">03</span>
+            <h3>Impact</h3>
+            <p>
+              Campaigns designed to be seen, remembered, and acted on. Measurement
+              through media dossiers and impact reports closes the loop on every campaign.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         5. CAPABILITIES TABLE
+    ══════════════════════════════════════════════════════════ -->
+    <section id="about-capabilities">
+      <div class="container">
+        <div class="about-cap-head reveal">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Everything Under One Roof</h2>
+          <p>
+            From street-level hoarding permits to campaign impact dossiers —
+            we handle every layer so you don't have to.
+          </p>
+        </div>
+
+        <div class="about-cap-grid">
+
+          <div class="about-cap-item reveal">
+            <div class="about-cap-dot"></div>
+            <div class="about-cap-text">
+              <h4>Campaign Strategy &amp; Planning</h4>
+              <p>Audience mapping, format selection, route planning, and timing optimisation before a single rupee is
+                spent on media.</p>
+            </div>
+          </div>
+
+          <div class="about-cap-item reveal">
+            <div class="about-cap-dot"></div>
+            <div class="about-cap-text">
+              <h4>Regulatory Compliance &amp; Permits</h4>
+              <p>Navigating Pondicherry municipality, NHAI, and departmental permissions so clients avoid costly delays
+                and removals.</p>
+            </div>
+          </div>
+
+          <div class="about-cap-item reveal">
+            <div class="about-cap-dot"></div>
+            <div class="about-cap-text">
+              <h4>Production &amp; Installation</h4>
+              <p>Flex printing, structural fabrication, illuminated signage, vinyl wraps — coordinated through vetted
+                vendor networks.</p>
+            </div>
+          </div>
+
+          <div class="about-cap-item reveal">
+            <div class="about-cap-dot"></div>
+            <div class="about-cap-text">
+              <h4>Print &amp; Cinema Placements</h4>
+              <p>Newspaper insertions, cinema on-screen and off-screen packages, and flyer distribution in targeted
+                localities.</p>
+            </div>
+          </div>
+
+          <div class="about-cap-item reveal">
+            <div class="about-cap-dot"></div>
+            <div class="about-cap-text">
+              <h4>Digital Marketing &amp; OOH Amplification</h4>
+              <p>Social media ads, SEO, and digital campaign management that extends the reach of your outdoor presence
+                online.</p>
+            </div>
+          </div>
+
+          <div class="about-cap-item reveal">
+            <div class="about-cap-dot"></div>
+            <div class="about-cap-text">
+              <h4>Media Monitoring &amp; Reporting</h4>
+              <p>Print and web media tracking, clip compilations, dossiers, and impact reports for government bodies and
+                institutions.</p>
+            </div>
+          </div>
+
+          <div class="about-cap-item reveal">
+            <div class="about-cap-dot"></div>
+            <div class="about-cap-text">
+              <h4>Corporate &amp; CSR Communication</h4>
+              <p>Branded events, stakeholder outreach, community campaigns, and branded merchandise aligned to your
+                public identity.</p>
+            </div>
+          </div>
+
+          <div class="about-cap-item reveal">
+            <div class="about-cap-dot"></div>
+            <div class="about-cap-text">
+              <h4>Vendor &amp; Space Coordination</h4>
+              <p>Direct relationships with media owners, site landlords, and installation crews across Pondicherry — no
+                middlemen markup.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         6. ABOUT-SPECIFIC CTA
+    ══════════════════════════════════════════════════════════ -->
+    <section id="about-cta">
+      <div class="container">
+        <p class="eyebrow" style="color:rgba(255,255,255,0.7);">Ready to be seen?</p>
+        <h2>Let's Put Your Brand on Pondicherry's Streets</h2>
+        <p>Tell us your goal — reach, recall, or market entry. We'll map the campaign.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn" href="contact.html">Get a Free Quote</a>
+          <a class="btn btn-outline" href="services.html">View All Services</a>
+        </div>
+      </div>
+    </section>
+
   </main>
-  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.svg" alt="Jayam Publicity"></a><p>End-to-end outdoor and integrated advertising solutions for Pondicherry.</p><div class="socials"><a href="mailto:teamjayam@jayampublicity.com" aria-label="Email Jayam Publicity">@</a><a href="https://share.google/vFJjMuUkjEhcriZox" target="_blank" rel="noopener noreferrer" aria-label="Google Business Profile">G</a><a href="https://wa.me/919791938052" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Jayam Publicity">WA</a></div></div><div><p class="footer-title">Quick Links</p><ul><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="clients.html">Clients</a></li><li><a href="process.html">Process</a></li><li><a href="media-advisory.html">Media Advisory</a></li><li><a href="contact.html">Contact</a></li></ul></div><div><p class="footer-title">Top Services</p><ul><li>Hoardings</li><li>Bus Shelters</li><li>Medians</li><li>Mobile Vans</li><li>Cinema Ads</li><li>Digital Marketing</li></ul></div><div><p class="footer-title">Contact</p><ul><li>No. 6, Rue De Chermont, Puducherry 605001</li><li><a href="tel:04132348080">0413 2348080</a></li><li><a href="mailto:teamjayam@jayampublicity.com">teamjayam@jayampublicity.com</a></li></ul><a class="btn btn-outline" href="https://share.google/vFJjMuUkjEhcriZox" target="_blank" rel="noopener noreferrer">View on Google Maps</a></div></div><div class="container footer-bottom"><span>&copy; <span data-current-year>2025</span> Jayam Publicity. All rights reserved.</span><span>Cookie-free, fast, and built for modern campaigns.</span></div></footer>
-  <a class="whatsapp-float" href="https://wa.me/919791938052" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Jayam Publicity"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91a9.86 9.86 0 0 0-2.91-7.01ZM12.05 20.15h-.01a8.22 8.22 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.25-8.25a8.2 8.2 0 0 1 5.83 2.42 8.19 8.19 0 0 1 2.42 5.84c0 4.54-3.7 8.23-8.25 8.23Zm4.52-6.16c-.25-.12-1.47-.73-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.45-1.36-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg></a><button class="back-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 4.5 11.5l1.4 1.4L11 7.83V20h2V7.83l5.1 5.07 1.4-1.4L12 4Z"/></svg></button><script src="script.js"></script>
+
+  <!-- ── Footer (unchanged) ────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.svg" alt="Jayam Publicity"></a>
+        <p>End-to-end outdoor and integrated advertising solutions for Pondicherry.</p>
+        <div class="socials">
+          <a href="mailto:teamjayam@jayampublicity.com" aria-label="Email Jayam Publicity">@</a>
+          <a href="https://share.google/vFJjMuUkjEhcriZox" target="_blank" rel="noopener noreferrer"
+            aria-label="Google Business Profile">G</a>
+          <a href="https://wa.me/919791938052" target="_blank" rel="noopener noreferrer"
+            aria-label="WhatsApp Jayam Publicity">WA</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-title">Quick Links</p>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="clients.html">Clients</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="media-advisory.html">Media Advisory</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Top Services</p>
+        <ul>
+          <li>Hoardings</li>
+          <li>Bus Shelters</li>
+          <li>Medians</li>
+          <li>Mobile Vans</li>
+          <li>Cinema Ads</li>
+          <li>Digital Marketing</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Contact</p>
+        <ul>
+          <li>No. 6, Rue De Chermont, Puducherry 605001</li>
+          <li><a href="tel:04132348080">0413 2348080</a></li>
+          <li><a href="mailto:teamjayam@jayampublicity.com">teamjayam@jayampublicity.com</a></li>
+        </ul>
+        <a class="btn btn-outline" href="https://share.google/vFJjMuUkjEhcriZox" target="_blank"
+          rel="noopener noreferrer">View on Google Maps</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; <span data-current-year>2025</span> Jayam Publicity. All rights reserved.</span>
+      <span>Cookie-free, fast, and built for modern campaigns.</span>
+    </div>
+  </footer>
+
+  <!-- ── Floating buttons (unchanged) ─────────────────────── -->
+  <a class="whatsapp-float" href="https://wa.me/919791938052" target="_blank" rel="noopener noreferrer"
+    aria-label="WhatsApp Jayam Publicity">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91a9.86 9.86 0 0 0-2.91-7.01ZM12.05 20.15h-.01a8.22 8.22 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.25-8.25a8.2 8.2 0 0 1 5.83 2.42 8.19 8.19 0 0 1 2.42 5.84c0 4.54-3.7 8.23-8.25 8.23Zm4.52-6.16c-.25-.12-1.47-.73-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.45-1.36-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29Z" />
+    </svg>
+  </a>
+  <button class="back-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 4 4.5 11.5l1.4 1.4L11 7.83V20h2V7.83l5.1 5.07 1.4-1.4L12 4Z" />
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+
+  <!-- About-page-only JS: hero h1 underline trigger -->
+  <script>
+    (function () {
+      // Trigger the h1 underline animation once the hero reveals
+      const h1 = document.querySelector('.about-hero-h1');
+      if (!h1) return;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            h1.classList.add('is-visible');
+            obs.unobserve(h1);
+          }
+        });
+      }, { threshold: 0.5 });
+      obs.observe(h1);
+    })();
+  </script>
+
 </body>
+
 </html>
