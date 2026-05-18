@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a08">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jayam Publicity">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://jayampublicity.com/og-cover.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <noscript>
+    <style>
+      #preloader {
+        display: none
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none
+      }
+
+      body {
+        overflow: auto
+      }
+    </style>
+  </noscript>
+  <title>Clients | Jayam Publicity</title>
+  <meta name="description"
+    content="See the brands and sectors that trust Jayam Publicity for outdoor and integrated advertising campaigns in Pondicherry.">
+  <meta property="og:title" content="Jayam Publicity Clients">
+  <meta name="twitter:title" content="Jayam Publicity Clients">
+  <meta property="og:description" content="Brands that trusted Pondicherry's streets to us.">
+  <meta name="twitter:description" content="Brands that trusted Pondicherry's streets to us.">
+  <meta property="og:image" content="https://jayampublicity.com/og-cover.jpg">
+  <meta property="og:url" content="https://jayampublicity.com/clients.html">
+  <link rel="canonical" href="https://jayampublicity.com/clients.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&family=Inter:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://jayampublicity.com/"},
+      {"@type":"ListItem","position":2,"name":"Clients","item":"https://jayampublicity.com/clients.html"}
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── CLIENTS PAGE SCOPED STYLES ── */
+
+    /* ── TICKER ── */
+    .client-ticker {
+      overflow: hidden;
+      border-block: 1px solid var(--line);
+      background: transparent;
+      padding: 0;
+    }
+
+    .client-ticker-track {
+      display: flex;
+      width: max-content;
+      animation: tickerFlow 38s linear infinite;
+    }
+
+    .client-ticker:hover .client-ticker-track {
+      animation-play-state: paused;
+    }
+
+    .client-ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 28px;
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-right: 1px solid var(--line);
+    }
+
+    .client-ticker-item::before {
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    @keyframes tickerFlow {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ── FILTER TABS ── */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .filter-tabs button {
+      position: relative;
+      padding: 9px 18px;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      background: transparent;
+      color: var(--muted);
+      font-family: var(--font-body);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: border-color 0.22s, color 0.22s, background 0.22s;
+    }
+
+    .filter-tabs button:hover {
+      border-color: rgba(245, 240, 232, 0.38);
+      color: var(--cream);
+    }
+
+    .filter-tabs button.is-active {
+      border-color: var(--red);
+      background: rgba(232, 67, 26, 0.14);
+      color: var(--cream);
+    }
+
+    /* Count badge inside tab */
+    .filter-tabs button .tab-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      height: 18px;
+      margin-left: 6px;
+      padding: 0 5px;
+      border-radius: 100px;
+      background: rgba(245, 240, 232, 0.1);
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      transition: background 0.22s, color 0.22s;
+    }
+
+    .filter-tabs button.is-active .tab-count {
+      background: rgba(232, 67, 26, 0.22);
+      color: var(--amber);
+    }
+
+    /* ── CLIENT GRID ── */
+    .client-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .client-card {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      padding: 22px 20px;
+      overflow: hidden;
+      cursor: default;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s;
+
+      /* reveal animation */
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    .client-card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.25s,
+        background 0.25s;
+    }
+
+    /* stagger via inline style set by JS */
+
+    .client-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--red), var(--amber));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .client-card:hover {
+      border-color: rgba(245, 240, 232, 0.26);
+      background: #1a1a16;
+      transform: translateY(-3px);
+    }
+
+    .client-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .client-card-industry {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+
+    .client-card-industry::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .client-card-name {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--cream);
+      margin: 0;
+    }
+
+    .client-card-desc {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    /* hidden state */
+    .client-card.is-hidden {
+      display: none;
+    }
+
+    /* ── SPOTLIGHT CARDS ── */
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .spotlight-card {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      padding: 32px 28px;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+
+    .spotlight-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--amber));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .spotlight-card:hover {
+      border-color: rgba(232, 67, 26, 0.28);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+    }
+
+    .spotlight-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* Large number */
+    .spotlight-num {
+      font-family: var(--font-head);
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      font-weight: 800;
+      line-height: 0.9;
+      color: rgba(232, 67, 26, 0.18);
+      margin-bottom: 20px;
+      letter-spacing: -0.04em;
+      transition: color 0.25s;
+    }
+
+    .spotlight-card:hover .spotlight-num {
+      color: rgba(232, 67, 26, 0.32);
+    }
+
+    .spotlight-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border: 1px solid rgba(232, 67, 26, 0.28);
+      border-radius: 100px;
+      background: rgba(232, 67, 26, 0.08);
+      color: var(--amber);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .spotlight-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-weight: 800;
+      color: var(--cream);
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+
+    .spotlight-body {
+      color: rgba(245, 240, 232, 0.6);
+      font-size: 0.875rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .spotlight-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .spotlight-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+    }
+
+    .spotlight-meta-row span:first-child {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .spotlight-meta-row span:last-child {
+      color: var(--cream);
+      font-weight: 700;
+    }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 72px;
+    }
+
+    .trust-item {
+      background: #111110;
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .trust-num {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .trust-num em {
+      color: var(--red);
+      font-style: normal;
+    }
+
+    .trust-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .spotlight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .client-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .trust-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .client-ticker-track {
+        animation: none;
+      }
+
+      .client-card {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader" aria-hidden="true">
+    <div class="pre-logo"><span>J</span><span>A</span><span>Y</span><span>A</span><span>M</span></div>
+    <div class="pre-sub">PUBLICITY</div>
+    <div class="pre-bar-track">
+      <div class="pre-bar"></div>
+    </div>
+    <p class="pre-tagline">Pondicherry's Boldest Advertising Agency</p>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.svg" alt="Jayam Publicity"></a>
+      <div class="nav-links">
+        <a data-nav href="services.html">Services</a>
+        <a data-nav href="about.html">About</a>
+        <a data-nav href="clients.html">Clients</a>
+        <a data-nav href="process.html">Process</a>
+        <a data-nav href="media-advisory.html">Media Advisory</a>
+        <a data-nav href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-red" href="contact.html">Get a Quote</a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Clients</span>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container narrow reveal">
+        <p class="eyebrow">Clients</p>
+        <h1>Brands That Trusted<br>Pondicherry's Streets to Us</h1>
+        <p class="lead">Jayam works across FMCG, pharma, retail, real estate, education, government, hospitality, and
+          local commerce — campaigns that need strong street-level visibility.</p>
+      </div>
+    </section>
+
+    <!-- ANIMATED TICKER -->
+    <div class="client-ticker" aria-hidden="true">
+      <div class="client-ticker-track" id="tickerTrack"></div>
+    </div>
+
+    <!-- CLIENT GRID SECTION -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Our Client Base</p>
+            <h2>Industries We've Served</h2>
+          </div>
+          <p>Over 25 years of campaigns across every major industry vertical in Pondicherry and surrounding markets.</p>
+        </div>
+
+        <!-- FILTER TABS -->
+        <div class="filter-tabs reveal" id="filterTabs">
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- GRID -->
+        <div class="client-grid" id="clientGrid">
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- TRUST STRIP -->
+        <div class="trust-strip reveal">
+          <div class="trust-item">
+            <div class="trust-num"><span data-count="25" data-suffix="+">25+</span></div>
+            <div class="trust-label">Years of campaigns</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-num"><span data-count="500" data-suffix="+">500+</span></div>
+            <div class="trust-label">Campaigns delivered</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-num"><span data-count="32" data-suffix="+">32+</span></div>
+            <div class="trust-label">Industry sectors served</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-num"><span data-count="13" data-suffix="+">13+</span></div>
+            <div class="trust-label">Ad formats available</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CAMPAIGN SPOTLIGHT -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Campaign Spotlight</p>
+            <h2>Recent Market Moves</h2>
+          </div>
+          <p>A sample of what we've executed — format, duration, and outcomes.</p>
+        </div>
+
+        <div class="spotlight-grid">
+
+          <article class="spotlight-card reveal">
+            <div class="spotlight-num">01</div>
+            <div class="spotlight-tag">FMCG</div>
+            <h3 class="spotlight-title">Product Launch Blitz</h3>
+            <p class="spotlight-body">High-frequency street-level coverage combining static hoardings at key trade
+              junctions with e-rickshaw branding deep into residential lanes.</p>
+            <div class="spotlight-meta">
+              <div class="spotlight-meta-row">
+                <span>Formats</span>
+                <span>Hoardings + E-Rickshaw</span>
+              </div>
+              <div class="spotlight-meta-row">
+                <span>Duration</span>
+                <span>30 days</span>
+              </div>
+              <div class="spotlight-meta-row">
+                <span>Outcome</span>
+                <span>High recall on priority routes</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="spotlight-card reveal" style="transition-delay:.08s">
+            <div class="spotlight-num">02</div>
+            <div class="spotlight-tag">Pharma</div>
+            <h3 class="spotlight-title">Visibility Sprint</h3>
+            <p class="spotlight-body">Targeted bus shelter panels near clinics and pharmacies, supported by print
+              inserts in local publications reaching healthcare decision-makers.</p>
+            <div class="spotlight-meta">
+              <div class="spotlight-meta-row">
+                <span>Formats</span>
+                <span>Bus Shelters + Print</span>
+              </div>
+              <div class="spotlight-meta-row">
+                <span>Duration</span>
+                <span>45 days</span>
+              </div>
+              <div class="spotlight-meta-row">
+                <span>Outcome</span>
+                <span>Stronger clinic-area awareness</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="spotlight-card reveal" style="transition-delay:.16s">
+            <div class="spotlight-num">03</div>
+            <div class="spotlight-tag">Retail</div>
+            <h3 class="spotlight-title">Store Opening Drive</h3>
+            <p class="spotlight-body">Coordinated median branding, mobile van with audio on opening routes, and digital
+              amplification on social channels for a multi-day opening blitz.</p>
+            <div class="spotlight-meta">
+              <div class="spotlight-meta-row">
+                <span>Formats</span>
+                <span>Medians + Van + Digital</span>
+              </div>
+              <div class="spotlight-meta-row">
+                <span>Duration</span>
+                <span>14 days</span>
+              </div>
+              <div class="spotlight-meta-row">
+                <span>Outcome</span>
+                <span>Opening-week footfall momentum</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="hero-actions reveal" style="margin-top: 36px;">
+          <a class="btn btn-red" href="contact.html">Join Our Client List</a>
+          <a class="btn btn-outline" href="process.html">See How We Work</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band">
+      <div class="container">
+        <p class="eyebrow" style="color:rgba(255,255,255,0.7)">Work With Us</p>
+        <h2>Ready to Put Your Brand on Pondicherry's Streets?</h2>
+        <p class="lead">Discovery call is free. Let's find the right format for your next campaign.</p>
+        <div class="hero-actions" style="justify-content:center; margin-top:32px;">
+          <a class="btn btn-dark" href="contact.html">Start a Campaign</a>
+          <a class="btn btn-outline" href="services.html">See All Services</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.svg" alt="Jayam Publicity"></a>
+        <p>End-to-end outdoor and integrated advertising solutions for Pondicherry.</p>
+        <div class="socials">
+          <a href="mailto:teamjayam@jayampublicity.com" aria-label="Email Jayam Publicity">@</a>
+          <a href="https://share.google/vFJjMuUkjEhcriZox" target="_blank" rel="noopener noreferrer"
+            aria-label="Google Business Profile">G</a>
+          <a href="https://wa.me/919791938052" target="_blank" rel="noopener noreferrer"
+            aria-label="WhatsApp Jayam Publicity">WA</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-title">Quick Links</p>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="clients.html">Clients</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="media-advisory.html">Media Advisory</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Top Services</p>
+        <ul>
+          <li>Hoardings</li>
+          <li>Bus Shelters</li>
+          <li>Medians</li>
+          <li>Mobile Vans</li>
+          <li>Cinema Ads</li>
+          <li>Digital Marketing</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Contact</p>
+        <ul>
+          <li>No. 6, Rue De Chermont, Puducherry 605001</li>
+          <li><a href="tel:04132348080">0413 2348080</a></li>
+          <li><a href="mailto:teamjayam@jayampublicity.com">teamjayam@jayampublicity.com</a></li>
+        </ul>
+        <a class="btn btn-outline" style="margin-top:14px; display:inline-flex;"
+          href="https://share.google/vFJjMuUkjEhcriZox" target="_blank" rel="noopener noreferrer">View on Google
+          Maps</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; <span data-current-year>2025</span> Jayam Publicity. All rights reserved.</span>
+      <span>Cookie-free, fast, and built for modern campaigns.</span>
+    </div>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <a class="whatsapp-float" href="https://wa.me/919791938052" target="_blank" rel="noopener noreferrer"
+    aria-label="WhatsApp Jayam Publicity">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91a9.86 9.86 0 0 0-2.91-7.01ZM12.05 20.15h-.01a8.22 8.22 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.25-8.25a8.2 8.2 0 0 1 5.83 2.42 8.19 8.19 0 0 1 2.42 5.84c0 4.54-3.7 8.23-8.25 8.23Zm4.52-6.16c-.25-.12-1.47-.73-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.45-1.36-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29Z" />
+    </svg>
+  </a>
+  <button class="back-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 4 4.5 11.5l1.4 1.4L11 7.83V20h2V7.83l5.1 5.07 1.4-1.4L12 4Z" />
+    </svg>
+  </button>
+
+  <!-- GLOBAL SCRIPT (unchanged) -->
+  <script src="script.js"></script>
+
+  <!-- CLIENTS PAGE SCRIPT -->
+  <script>
+    (function () {
+
+      /* ── DATA ── */
+      const clients = [
+        { name: "FMCG Brands", industry: "FMCG", desc: "Consumer goods, launches & market penetration" },
+        { name: "Pharma Companies", industry: "Pharma", desc: "Healthcare visibility near clinics & pharmacies" },
+        { name: "Retail Chains", industry: "Retail", desc: "Storefront branding & opening campaigns" },
+        { name: "Real Estate", industry: "Real Estate", desc: "Site hoardings & development launches" },
+        { name: "Schools & Colleges", industry: "Education", desc: "Admissions drives & institutional awareness" },
+        { name: "Government Bodies", industry: "Government", desc: "Public awareness & civic campaigns" },
+        { name: "Healthcare", industry: "Pharma", desc: "Hospital & clinic visibility campaigns" },
+        { name: "Hotels & Resorts", industry: "Hospitality", desc: "Tourism & staycation promotions" },
+        { name: "Automotive", industry: "Retail", desc: "Showroom launches & vehicle campaigns" },
+        { name: "Jewellery Brands", industry: "Retail", desc: "Festival & seasonal high-reach campaigns" },
+        { name: "Food & Beverage", industry: "FMCG", desc: "Restaurant openings & brand recall" },
+        { name: "Consumer Electronics", industry: "Retail", desc: "Product launches & store traffic" },
+        { name: "Finance & Banking", industry: "Finance", desc: "Branch openings & product awareness" },
+        { name: "Textiles & Fashion", industry: "Retail", desc: "Seasonal sales & brand visibility" },
+        { name: "Coaching Institutes", industry: "Education", desc: "Admission season awareness" },
+        { name: "Developers", industry: "Real Estate", desc: "Project visibility & site launches" },
+        { name: "Supermarkets", industry: "Retail", desc: "Footfall drives & offer announcements" },
+        { name: "Wellness & Clinics", industry: "Pharma", desc: "Hyperlocal health awareness campaigns" },
+        { name: "Tourism & Travel", industry: "Hospitality", desc: "Destination & package promotions" },
+        { name: "Political Campaigns", industry: "Government", desc: "High-reach mobile & hoarding blitzes" },
+        { name: "Events & Concerts", industry: "Events", desc: "Pre-event buzz & day-of activation" },
+        { name: "Startups", industry: "FMCG", desc: "Brand launch visibility & recall" },
+        { name: "Insurance Brands", industry: "Finance", desc: "Awareness & agent network campaigns" },
+        { name: "Service Brands", industry: "Retail", desc: "Local service area domination" },
+        { name: "NGOs & Trusts", industry: "Government", desc: "Public drive & social awareness" },
+        { name: "Lifestyle Brands", industry: "FMCG", desc: "Aspiration & recall campaigns" },
+        { name: "Regional Brands", industry: "FMCG", desc: "Territory expansion & market entry" },
+        { name: "Sports & Fitness", industry: "Events", desc: "Club launches & event promotions" },
+      ];
+
+      const tickerItems = [
+        "FMCG", "Pharma", "Retail", "Real Estate", "Education", "Government",
+        "Hospitality", "Automotive", "Finance", "Jewellery", "Textiles",
+        "Food & Beverage", "Consumer Electronics", "Tourism", "Wellness",
+        "Events & Activations", "Startups", "Service Brands", "Regional Brands"
+      ];
+
+      const industries = ["All", "FMCG", "Pharma", "Retail", "Real Estate", "Education", "Government", "Hospitality", "Finance", "Events"];
+
+      /* ── BUILD TICKER ── */
+      const tickerTrack = document.getElementById("tickerTrack");
+      if (tickerTrack) {
+        const doubled = [...tickerItems, ...tickerItems];
+        tickerTrack.innerHTML = doubled.map(t =>
+          `<span class="client-ticker-item">${t}</span>`
+        ).join("");
+      }
+
+      /* ── BUILD FILTER TABS ── */
+      const tabsEl = document.getElementById("filterTabs");
+      if (tabsEl) {
+        industries.forEach(ind => {
+          const count = ind === "All" ? clients.length : clients.filter(c => c.industry === ind).length;
+          if (count === 0) return;
+          const btn = document.createElement("button");
+          btn.dataset.industry = ind;
+          btn.innerHTML = `${ind}<span class="tab-count">${count}</span>`;
+          if (ind === "All") btn.classList.add("is-active");
+          tabsEl.appendChild(btn);
+        });
+      }
+
+      /* ── BUILD CLIENT GRID ── */
+      const gridEl = document.getElementById("clientGrid");
+      if (gridEl) {
+        clients.forEach((client, i) => {
+          const card = document.createElement("div");
+          card.className = "client-card";
+          card.dataset.industry = client.industry;
+          card.style.transitionDelay = (i % 6) * 0.06 + "s";
+          card.innerHTML = `
+          <div class="client-card-industry">${client.industry}</div>
+          <p class="client-card-name">${client.name}</p>
+          <p class="client-card-desc">${client.desc}</p>
+        `;
+          gridEl.appendChild(card);
+        });
+      }
+
+      /* ── FILTER LOGIC with smooth hide/show ── */
+      let activeFilter = "All";
+
+      function applyFilter(industry) {
+        activeFilter = industry;
+        const cards = document.querySelectorAll(".client-card");
+
+        // Update tab active state
+        document.querySelectorAll("#filterTabs button").forEach(btn => {
+          btn.classList.toggle("is-active", btn.dataset.industry === industry);
+        });
+
+        cards.forEach((card, i) => {
+          const match = industry === "All" || card.dataset.industry === industry;
+          if (match) {
+            card.classList.remove("is-hidden");
+            // Re-trigger reveal with slight stagger
+            card.style.opacity = "0";
+            card.style.transform = "translateY(14px)";
+            const delay = (i % 5) * 0.045;
+            setTimeout(() => {
+              card.style.transition = `opacity 0.42s cubic-bezier(0.22,1,0.36,1) ${delay}s, transform 0.42s cubic-bezier(0.22,1,0.36,1) ${delay}s, border-color 0.25s, background 0.25s`;
+              card.style.opacity = "1";
+              card.style.transform = "translateY(0)";
+            }, 10);
+          } else {
+            // Fade out then hide
+            card.style.transition = "opacity 0.18s ease, transform 0.18s ease";
+            card.style.opacity = "0";
+            card.style.transform = "translateY(8px)";
+            setTimeout(() => { card.classList.add("is-hidden"); }, 200);
+          }
+        });
+      }
+
+      document.getElementById("filterTabs")?.addEventListener("click", e => {
+        const btn = e.target.closest("button[data-industry]");
+        if (btn && btn.dataset.industry !== activeFilter) {
+          applyFilter(btn.dataset.industry);
+        }
+      });
+
+      /* ── SCROLL-REVEAL for client cards ── */
+      const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            cardObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll(".client-card").forEach(card => {
+        cardObserver.observe(card);
+      });
+
+    })();
+  </script>
+
+</body>
+
+</html>

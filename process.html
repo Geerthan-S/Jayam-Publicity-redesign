@@ -1,0 +1,1332 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a08">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jayam Publicity">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Process | Jayam Publicity</title>
+  <meta name="description"
+    content="See how Jayam Publicity plans, produces, installs, monitors, and reports outdoor advertising campaigns in Pondicherry.">
+  <meta property="og:title" content="Jayam Publicity Campaign Process">
+  <meta property="og:description" content="How a campaign comes to life, from discovery to reporting.">
+  <meta property="og:url" content="https://jayampublicity.com/process.html">
+  <link rel="canonical" href="https://jayampublicity.com/process.html">
+  <noscript>
+    <style>
+      #preloader {
+        display: none
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none
+      }
+
+      body {
+        overflow: auto
+      }
+    </style>
+  </noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&family=Inter:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://jayampublicity.com/"},
+      {"@type":"ListItem","position":2,"name":"Process","item":"https://jayampublicity.com/process.html"}
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── PROCESS PAGE SCOPED STYLES ── */
+
+    /* Step progress bar at top of timeline section */
+    .process-progress-wrap {
+      position: sticky;
+      top: 78px;
+      z-index: 30;
+      background: rgba(10, 10, 8, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(245, 240, 232, 0.10);
+      padding: 14px 0;
+    }
+
+    .process-progress-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .pp-step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .pp-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 14px;
+      left: calc(50% + 14px);
+      right: calc(-50% + 14px);
+      height: 1px;
+      background: rgba(245, 240, 232, 0.14);
+      transition: background 0.4s ease;
+    }
+
+    .pp-step.is-done:not(:last-child)::after {
+      background: var(--red);
+    }
+
+    .pp-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid rgba(245, 240, 232, 0.20);
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--muted);
+      transition: border-color 0.3s, background 0.3s, color 0.3s, transform 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pp-step.is-active .pp-dot {
+      border-color: var(--red);
+      background: var(--red);
+      color: #fff;
+      transform: scale(1.2);
+    }
+
+    .pp-step.is-done .pp-dot {
+      border-color: var(--red);
+      background: var(--red);
+      color: #fff;
+    }
+
+    .pp-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+
+    .pp-step.is-active .pp-label {
+      color: var(--cream);
+    }
+
+    .pp-step.is-done .pp-label {
+      color: rgba(245, 240, 232, 0.55);
+    }
+
+    /* ── TIMELINE WRAPPER ── */
+    .process-timeline {
+      position: relative;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .process-timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(245, 240, 232, 0.10);
+      transform: translateX(-50%);
+    }
+
+    /* Fill line that grows as you scroll */
+    .timeline-fill {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 2px;
+      height: 0%;
+      background: linear-gradient(180deg, var(--red), var(--amber));
+      transform: translateX(-50%);
+      transition: height 0.1s linear;
+      z-index: 1;
+    }
+
+    /* ── TIMELINE ITEM ── */
+    .tl-item {
+      display: grid;
+      grid-template-columns: 1fr 64px 1fr;
+      gap: 0;
+      align-items: start;
+      padding: 52px 0;
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .tl-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tl-item:nth-child(2) {
+      transition-delay: 0.05s;
+    }
+
+    .tl-item:nth-child(3) {
+      transition-delay: 0.10s;
+    }
+
+    .tl-item:nth-child(4) {
+      transition-delay: 0.15s;
+    }
+
+    .tl-item:nth-child(5) {
+      transition-delay: 0.20s;
+    }
+
+    .tl-item:nth-child(6) {
+      transition-delay: 0.25s;
+    }
+
+    /* Odd items: content left, empty right */
+    .tl-item:nth-child(odd) .tl-card {
+      grid-column: 1;
+    }
+
+    .tl-item:nth-child(odd) .tl-node {
+      grid-column: 2;
+    }
+
+    .tl-item:nth-child(odd) .tl-empty {
+      grid-column: 3;
+    }
+
+    /* Even items: empty left, content right */
+    .tl-item:nth-child(even) .tl-empty {
+      grid-column: 1;
+      order: -1;
+    }
+
+    .tl-item:nth-child(even) .tl-node {
+      grid-column: 2;
+    }
+
+    .tl-item:nth-child(even) .tl-card {
+      grid-column: 3;
+    }
+
+    /* Center node */
+    .tl-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      padding-top: 6px;
+    }
+
+    .tl-bullet {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid rgba(245, 240, 232, 0.18);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--muted);
+      transition: border-color 0.35s, background 0.35s, color 0.35s, box-shadow 0.35s, transform 0.35s;
+      position: relative;
+      z-index: 2;
+      cursor: default;
+    }
+
+    .tl-item.is-active .tl-bullet {
+      border-color: var(--red);
+      background: var(--red);
+      color: #fff;
+      box-shadow: 0 0 0 8px rgba(232, 67, 26, 0.15);
+      transform: scale(1.12);
+    }
+
+    .tl-item.is-done .tl-bullet {
+      border-color: var(--red);
+      background: var(--red);
+      color: #fff;
+    }
+
+    /* Checkmark SVG for done state */
+    .tl-item.is-done .tl-num {
+      display: none;
+    }
+
+    .tl-item.is-done .tl-check {
+      display: block;
+    }
+
+    .tl-check {
+      display: none;
+    }
+
+    /* Card */
+    .tl-card {
+      padding: 28px 36px;
+      border: 1px solid rgba(245, 240, 232, 0.10);
+      border-radius: 10px;
+      background: #111110;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .tl-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--amber));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .tl-item.is-active .tl-card {
+      border-color: rgba(232, 67, 26, 0.35);
+      background: #181410;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(232, 67, 26, 0.12);
+    }
+
+    .tl-item.is-active .tl-card::before,
+    .tl-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .tl-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin: 0 0 10px;
+    }
+
+    .tl-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      font-weight: 800;
+      margin: 0 0 12px;
+      line-height: 1.15;
+      color: var(--cream);
+    }
+
+    .tl-summary {
+      color: rgba(245, 240, 232, 0.65);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Expandable detail panel */
+    .tl-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+      opacity: 0;
+    }
+
+    .tl-item.is-expanded .tl-detail {
+      max-height: 400px;
+      opacity: 1;
+    }
+
+    .tl-detail-inner {
+      padding-top: 20px;
+      border-top: 1px solid rgba(245, 240, 232, 0.08);
+      margin-top: 18px;
+    }
+
+    .tl-detail-inner ul {
+      margin: 0;
+      padding: 0 0 0 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tl-detail-inner li {
+      color: rgba(245, 240, 232, 0.72);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .tl-detail-inner li::marker {
+      color: var(--red);
+    }
+
+    .tl-duration {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      padding: 6px 12px;
+      border: 1px solid rgba(232, 67, 26, 0.25);
+      border-radius: 100px;
+      background: rgba(232, 67, 26, 0.08);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--amber);
+      letter-spacing: 0.04em;
+    }
+
+    .tl-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 18px;
+      background: transparent;
+      border: none;
+      color: var(--red);
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.2s, gap 0.2s;
+    }
+
+    .tl-toggle:hover {
+      color: var(--amber);
+      gap: 10px;
+    }
+
+    .tl-toggle svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .tl-item.is-expanded .tl-toggle svg {
+      transform: rotate(45deg);
+    }
+
+    /* Arrow connector between node and card */
+    .tl-item:nth-child(odd) .tl-card::after {
+      content: "";
+      position: absolute;
+      right: -9px;
+      top: 24px;
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 9px solid rgba(245, 240, 232, 0.10);
+    }
+
+    .tl-item:nth-child(even) .tl-card::after {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 24px;
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 9px solid rgba(245, 240, 232, 0.10);
+    }
+
+    /* ── FAQ ── */
+    .faq-item {
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 20px 22px;
+      border: 0;
+      background: transparent;
+      color: var(--dark-text);
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.97rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .faq-arrow {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .faq-item.is-open .faq-arrow {
+      transform: rotate(45deg);
+    }
+
+    .faq-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .faq-item.is-open .faq-panel {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-panel-inner {
+      overflow: hidden;
+    }
+
+    .faq-panel-inner p {
+      padding: 0 22px 22px;
+      margin: 0;
+      color: rgba(24, 24, 20, 0.68);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    /* ── STAT ROW ── */
+    .process-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 72px;
+    }
+
+    .ps-item {
+      background: #111110;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .ps-num {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--cream);
+    }
+
+    .ps-num span {
+      color: var(--red);
+    }
+
+    .ps-label {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .process-progress-wrap {
+        top: 68px;
+      }
+
+      .pp-label {
+        display: none;
+      }
+
+      .pp-dot {
+        width: 22px;
+        height: 22px;
+        font-size: 10px;
+      }
+
+      .process-timeline::before {
+        left: 24px;
+      }
+
+      .timeline-fill {
+        left: 24px;
+      }
+
+      .tl-item {
+        grid-template-columns: 48px 1fr;
+        padding: 28px 0;
+        gap: 0;
+      }
+
+      .tl-item:nth-child(odd) .tl-card,
+      .tl-item:nth-child(even) .tl-card {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .tl-item:nth-child(odd) .tl-node,
+      .tl-item:nth-child(even) .tl-node {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .tl-empty {
+        display: none;
+      }
+
+      .tl-card {
+        padding: 20px;
+      }
+
+      .tl-item:nth-child(odd) .tl-card::after,
+      .tl-item:nth-child(even) .tl-card::after {
+        left: -8px;
+        right: auto;
+        border-left: none;
+        border-right: 8px solid rgba(245, 240, 232, 0.10);
+      }
+
+      .process-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .process-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader" aria-hidden="true">
+    <div class="pre-logo">
+      <span>J</span><span>A</span><span>Y</span><span>A</span><span>M</span>
+    </div>
+    <div class="pre-sub">PUBLICITY</div>
+    <div class="pre-bar-track">
+      <div class="pre-bar"></div>
+    </div>
+    <p class="pre-tagline">Pondicherry's Boldest Advertising Agency</p>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="assets/logo.svg" alt="Jayam Publicity">
+      </a>
+      <div class="nav-links">
+        <a data-nav href="services.html">Services</a>
+        <a data-nav href="about.html">About</a>
+        <a data-nav href="clients.html">Clients</a>
+        <a data-nav href="process.html">Process</a>
+        <a data-nav href="media-advisory.html">Media Advisory</a>
+        <a data-nav href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-red" href="contact.html">Get a Quote</a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Process</span>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container narrow reveal">
+        <p class="eyebrow">How We Work</p>
+        <h1>How a Campaign<br>Comes to Life</h1>
+        <p class="lead">A clear, six-step operating model — from your first brief to the final report. No guesswork, no
+          surprises.</p>
+      </div>
+    </section>
+
+    <!-- QUICK STATS -->
+    <section class="section" style="padding-top: 0; padding-bottom: 48px;">
+      <div class="container">
+        <div class="process-stats reveal">
+          <div class="ps-item">
+            <div class="ps-num"><span data-count="25" data-suffix="+">25+</span></div>
+            <div class="ps-label">Years Running Campaigns</div>
+          </div>
+          <div class="ps-item">
+            <div class="ps-num"><span data-count="500" data-suffix="+">500+</span></div>
+            <div class="ps-label">Campaigns Delivered</div>
+          </div>
+          <div class="ps-item">
+            <div class="ps-num"><span data-count="15" data-suffix=" Days">15 Days</span></div>
+            <div class="ps-label">Avg. Discovery to Launch</div>
+          </div>
+          <div class="ps-item">
+            <div class="ps-num"><span data-count="13" data-suffix="+">13+</span></div>
+            <div class="ps-label">Ad Formats Available</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STICKY STEP PROGRESS BAR -->
+    <div class="process-progress-wrap" id="processProgressWrap" aria-hidden="true">
+      <div class="process-progress-inner">
+        <div class="pp-step" data-pp="0">
+          <div class="pp-dot">1</div>
+          <span class="pp-label">Discovery</span>
+        </div>
+        <div class="pp-step" data-pp="1">
+          <div class="pp-dot">2</div>
+          <span class="pp-label">Strategy</span>
+        </div>
+        <div class="pp-step" data-pp="2">
+          <div class="pp-dot">3</div>
+          <span class="pp-label">Production</span>
+        </div>
+        <div class="pp-step" data-pp="3">
+          <div class="pp-dot">4</div>
+          <span class="pp-label">Installation</span>
+        </div>
+        <div class="pp-step" data-pp="4">
+          <div class="pp-dot">5</div>
+          <span class="pp-label">Monitoring</span>
+        </div>
+        <div class="pp-step" data-pp="5">
+          <div class="pp-dot">6</div>
+          <span class="pp-label">Reporting</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
+    <section class="section" id="timelineSection">
+      <div class="container">
+        <div class="process-timeline" id="processTimeline">
+          <div class="timeline-fill" id="timelineFill"></div>
+
+          <!-- STEP 1 -->
+          <article class="tl-item" data-step="0" id="step-0">
+            <div class="tl-card" role="button" tabindex="0" aria-expanded="false">
+              <p class="tl-eyebrow">Step 01</p>
+              <h3 class="tl-title">Discovery Call</h3>
+              <p class="tl-summary">We start by listening. Understanding your brand, goals, target audience, budget, and
+                the market pressure you're navigating.</p>
+              <div class="tl-detail">
+                <div class="tl-detail-inner">
+                  <ul>
+                    <li>Brand background, product or service positioning</li>
+                    <li>Target geography, demographics, and psychographics</li>
+                    <li>Campaign objective — awareness, launches, recall, footfall</li>
+                    <li>Budget range and decision timeline</li>
+                    <li>Past campaign history and what worked or didn't</li>
+                  </ul>
+                  <div class="tl-duration">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    Typically 30–60 min call or meeting
+                  </div>
+                </div>
+              </div>
+              <button class="tl-toggle" aria-label="Expand step details">
+                <span>Details</span>
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="8" y1="2" x2="8" y2="14" />
+                  <line x1="2" y1="8" x2="14" y2="8" />
+                </svg>
+              </button>
+            </div>
+            <div class="tl-node">
+              <div class="tl-bullet">
+                <span class="tl-num">01</span>
+                <svg class="tl-check" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff"
+                  stroke-width="2.5">
+                  <polyline points="3 8 7 12 13 5" />
+                </svg>
+              </div>
+            </div>
+            <div class="tl-empty"></div>
+          </article>
+
+          <!-- STEP 2 -->
+          <article class="tl-item" data-step="1" id="step-1">
+            <div class="tl-empty"></div>
+            <div class="tl-node">
+              <div class="tl-bullet">
+                <span class="tl-num">02</span>
+                <svg class="tl-check" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff"
+                  stroke-width="2.5">
+                  <polyline points="3 8 7 12 13 5" />
+                </svg>
+              </div>
+            </div>
+            <div class="tl-card" role="button" tabindex="0" aria-expanded="false">
+              <p class="tl-eyebrow">Step 02</p>
+              <h3 class="tl-title">Media Strategy</h3>
+              <p class="tl-summary">We match your objective to the right formats, locations, routes, and timing — no
+                bloated plans, only what drives practical reach.</p>
+              <div class="tl-detail">
+                <div class="tl-detail-inner">
+                  <ul>
+                    <li>Format selection — hoardings, bus shelters, medians, transit, digital</li>
+                    <li>Location scouting and site shortlisting with footfall data</li>
+                    <li>Route planning for mobile and transit formats</li>
+                    <li>Timing and duration recommendations by format</li>
+                    <li>Budget allocation across formats with reach estimates</li>
+                  </ul>
+                  <div class="tl-duration">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    Proposal delivered within 3–5 working days
+                  </div>
+                </div>
+              </div>
+              <button class="tl-toggle" aria-label="Expand step details">
+                <span>Details</span>
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="8" y1="2" x2="8" y2="14" />
+                  <line x1="2" y1="8" x2="14" y2="8" />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- STEP 3 -->
+          <article class="tl-item" data-step="2" id="step-2">
+            <div class="tl-card" role="button" tabindex="0" aria-expanded="false">
+              <p class="tl-eyebrow">Step 03</p>
+              <h3 class="tl-title">Creative &amp; Production</h3>
+              <p class="tl-summary">Artwork coordination, print production, material procurement, and vendor alignment —
+                we handle the complexity so you don't have to.</p>
+              <div class="tl-detail">
+                <div class="tl-detail-inner">
+                  <ul>
+                    <li>Artwork review for print-readiness and format compliance</li>
+                    <li>Print production coordination — flex, vinyl, backlit, digital</li>
+                    <li>Material procurement and quality checks</li>
+                    <li>Vendor and sub-contractor briefing and supervision</li>
+                    <li>Proof approval workflow with client sign-off</li>
+                  </ul>
+                  <div class="tl-duration">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    5–10 working days depending on format
+                  </div>
+                </div>
+              </div>
+              <button class="tl-toggle" aria-label="Expand step details">
+                <span>Details</span>
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="8" y1="2" x2="8" y2="14" />
+                  <line x1="2" y1="8" x2="14" y2="8" />
+                </svg>
+              </button>
+            </div>
+            <div class="tl-node">
+              <div class="tl-bullet">
+                <span class="tl-num">03</span>
+                <svg class="tl-check" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff"
+                  stroke-width="2.5">
+                  <polyline points="3 8 7 12 13 5" />
+                </svg>
+              </div>
+            </div>
+            <div class="tl-empty"></div>
+          </article>
+
+          <!-- STEP 4 -->
+          <article class="tl-item" data-step="3" id="step-3">
+            <div class="tl-empty"></div>
+            <div class="tl-node">
+              <div class="tl-bullet">
+                <span class="tl-num">04</span>
+                <svg class="tl-check" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff"
+                  stroke-width="2.5">
+                  <polyline points="3 8 7 12 13 5" />
+                </svg>
+              </div>
+            </div>
+            <div class="tl-card" role="button" tabindex="0" aria-expanded="false">
+              <p class="tl-eyebrow">Step 04</p>
+              <h3 class="tl-title">Installation &amp; Launch</h3>
+              <p class="tl-summary">On-ground installation with photo documentation and a launch confirmation report
+                delivered to you on Day 1.</p>
+              <div class="tl-detail">
+                <div class="tl-detail-inner">
+                  <ul>
+                    <li>Site preparation and permission verification</li>
+                    <li>Supervised installation by trained ground crew</li>
+                    <li>Geo-tagged photo documentation of all sites</li>
+                    <li>Installation completion report with timestamps</li>
+                    <li>Client walkthrough or remote confirmation</li>
+                  </ul>
+                  <div class="tl-duration">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    Installation Day — report same day
+                  </div>
+                </div>
+              </div>
+              <button class="tl-toggle" aria-label="Expand step details">
+                <span>Details</span>
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="8" y1="2" x2="8" y2="14" />
+                  <line x1="2" y1="8" x2="14" y2="8" />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- STEP 5 -->
+          <article class="tl-item" data-step="4" id="step-4">
+            <div class="tl-card" role="button" tabindex="0" aria-expanded="false">
+              <p class="tl-eyebrow">Step 05</p>
+              <h3 class="tl-title">Live Monitoring</h3>
+              <p class="tl-summary">Campaign tracking, periodic site visits, condition checks, and issue resolution
+                throughout the campaign duration.</p>
+              <div class="tl-detail">
+                <div class="tl-detail-inner">
+                  <ul>
+                    <li>Scheduled site visits and condition audits</li>
+                    <li>Material integrity checks — weather, wear, vandalism</li>
+                    <li>Rapid issue resolution and re-installation if needed</li>
+                    <li>Mid-campaign photo updates shared with client</li>
+                    <li>Route tracking for mobile van campaigns</li>
+                  </ul>
+                  <div class="tl-duration">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    Ongoing throughout campaign duration
+                  </div>
+                </div>
+              </div>
+              <button class="tl-toggle" aria-label="Expand step details">
+                <span>Details</span>
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="8" y1="2" x2="8" y2="14" />
+                  <line x1="2" y1="8" x2="14" y2="8" />
+                </svg>
+              </button>
+            </div>
+            <div class="tl-node">
+              <div class="tl-bullet">
+                <span class="tl-num">05</span>
+                <svg class="tl-check" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff"
+                  stroke-width="2.5">
+                  <polyline points="3 8 7 12 13 5" />
+                </svg>
+              </div>
+            </div>
+            <div class="tl-empty"></div>
+          </article>
+
+          <!-- STEP 6 -->
+          <article class="tl-item" data-step="5" id="step-5">
+            <div class="tl-empty"></div>
+            <div class="tl-node">
+              <div class="tl-bullet">
+                <span class="tl-num">06</span>
+                <svg class="tl-check" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff"
+                  stroke-width="2.5">
+                  <polyline points="3 8 7 12 13 5" />
+                </svg>
+              </div>
+            </div>
+            <div class="tl-card" role="button" tabindex="0" aria-expanded="false">
+              <p class="tl-eyebrow">Step 06</p>
+              <h3 class="tl-title">Reporting &amp; Review</h3>
+              <p class="tl-summary">Post-campaign analytics, reach estimates, proof-of-performance material, and an ROI
+                discussion to plan what comes next.</p>
+              <div class="tl-detail">
+                <div class="tl-detail-inner">
+                  <ul>
+                    <li>Full photo proof-of-performance documentation</li>
+                    <li>Reach and impression estimates by format and location</li>
+                    <li>Campaign timeline and milestone summary</li>
+                    <li>ROI discussion and benchmark comparison</li>
+                    <li>Next campaign recommendations based on outcomes</li>
+                  </ul>
+                  <div class="tl-duration">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    Report delivered within 5 days of campaign end
+                  </div>
+                </div>
+              </div>
+              <button class="tl-toggle" aria-label="Expand step details">
+                <span>Details</span>
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="8" y1="2" x2="8" y2="14" />
+                  <line x1="2" y1="8" x2="14" y2="8" />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+        </div><!-- /process-timeline -->
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section light">
+      <div class="container narrow">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">FAQ</p>
+            <h2>Common Campaign Questions</h2>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Minimum campaign duration?
+            <svg class="faq-arrow" viewBox="0 0 24 24">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">
+              <p>Most outdoor plans work best from 15 to 30 days upward. Shorter tactical bursts are possible for mobile
+                vans and event-led formats — we'll advise based on your objective.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Do you handle creative design?
+            <svg class="faq-arrow" viewBox="0 0 24 24">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">
+              <p>Jayam can coordinate artwork adaptation, production-ready file checks, print verification, and
+                execution guidance. Full creative development can be discussed based on campaign scope.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false">
+            What areas do you cover?
+            <svg class="faq-arrow" viewBox="0 0 24 24">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">
+              <p>Jayam focuses on Pondicherry and surrounding markets, with media options across key roads, transit
+                points, retail zones, and campaign-specific routes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Can you combine multiple formats?
+            <svg class="faq-arrow" viewBox="0 0 24 24">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">
+              <p>Yes — and we actively recommend it. Integrated plans combining hoardings, medians, bus shelters, mobile
+                media, print, cinema, retail branding, and digital amplification consistently outperform single-format
+                campaigns.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Is GST billing available?
+            <svg class="faq-arrow" viewBox="0 0 24 24">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div class="faq-panel-inner">
+              <p>Yes, campaign billing and documentation can be fully structured for business accounting requirements
+                including GST-compliant invoicing.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band">
+      <div class="container">
+        <p class="eyebrow" style="color:rgba(255,255,255,0.7)">Start Today</p>
+        <h2>Ready to Own Pondicherry's Streets?</h2>
+        <p class="lead">Let's plan your next campaign — big or small. Discovery call is free.</p>
+        <div class="hero-actions" style="justify-content:center; margin-top:32px;">
+          <a class="btn btn-dark" href="contact.html">Start a Campaign</a>
+          <a class="btn btn-outline" href="services.html">See All Services</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.svg" alt="Jayam Publicity"></a>
+        <p>End-to-end outdoor and integrated advertising solutions for Pondicherry.</p>
+        <div class="socials">
+          <a href="mailto:teamjayam@jayampublicity.com" aria-label="Email Jayam Publicity">@</a>
+          <a href="https://share.google/vFJjMuUkjEhcriZox" target="_blank" rel="noopener noreferrer"
+            aria-label="Google Business Profile">G</a>
+          <a href="https://wa.me/919791938052" target="_blank" rel="noopener noreferrer"
+            aria-label="WhatsApp Jayam Publicity">WA</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-title">Quick Links</p>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="clients.html">Clients</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="media-advisory.html">Media Advisory</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Top Services</p>
+        <ul>
+          <li>Hoardings</li>
+          <li>Bus Shelters</li>
+          <li>Medians</li>
+          <li>Mobile Vans</li>
+          <li>Cinema Ads</li>
+          <li>Digital Marketing</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Contact</p>
+        <ul>
+          <li>No. 6, Rue De Chermont, Puducherry 605001</li>
+          <li><a href="tel:04132348080">0413 2348080</a></li>
+          <li><a href="mailto:teamjayam@jayampublicity.com">teamjayam@jayampublicity.com</a></li>
+        </ul>
+        <a class="btn btn-outline" style="margin-top:14px; display:inline-flex;"
+          href="https://share.google/vFJjMuUkjEhcriZox" target="_blank" rel="noopener noreferrer">View on Google
+          Maps</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; <span data-current-year>2025</span> Jayam Publicity. All rights reserved.</span>
+      <span>Cookie-free, fast, and built for modern campaigns.</span>
+    </div>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <a class="whatsapp-float" href="https://wa.me/919791938052" target="_blank" rel="noopener noreferrer"
+    aria-label="WhatsApp Jayam Publicity">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91a9.86 9.86 0 0 0-2.91-7.01ZM12.05 20.15h-.01a8.22 8.22 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.25-8.25a8.2 8.2 0 0 1 5.83 2.42 8.19 8.19 0 0 1 2.42 5.84c0 4.54-3.7 8.23-8.25 8.23Zm4.52-6.16c-.25-.12-1.47-.73-1.7-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.45-1.36-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43s.17-.25.25-.42c.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29Z" />
+    </svg>
+  </a>
+  <button class="back-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 4 4.5 11.5l1.4 1.4L11 7.83V20h2V7.83l5.1 5.07 1.4-1.4L12 4Z" />
+    </svg>
+  </button>
+
+  <!-- EXISTING GLOBAL SCRIPT -->
+  <script src="script.js"></script>
+
+  <!-- PROCESS PAGE SPECIFIC SCRIPT -->
+  <script>
+    (function () {
+
+      /* ── TIMELINE SCROLL LOGIC ── */
+      const items = document.querySelectorAll(".tl-item");
+      const ppSteps = document.querySelectorAll(".pp-step");
+      const fill = document.getElementById("timelineFill");
+      const timeline = document.getElementById("processTimeline");
+
+      /* Reveal items on scroll */
+      const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            revealObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.18 });
+      items.forEach(item => revealObs.observe(item));
+
+      /* Active step + progress fill on scroll */
+      function updateActiveStep() {
+        const tlRect = timeline.getBoundingClientRect();
+        const winHeight = window.innerHeight;
+        const trigger = winHeight * 0.5;
+        let activeIdx = -1;
+
+        items.forEach((item, i) => {
+          const rect = item.getBoundingClientRect();
+          const mid = rect.top + rect.height / 2;
+          if (mid < trigger) {
+            item.classList.add("is-done");
+            item.classList.remove("is-active");
+            activeIdx = i;
+          } else if (rect.top < trigger && mid >= trigger) {
+            item.classList.remove("is-done");
+            item.classList.add("is-active");
+            activeIdx = i;
+          } else {
+            item.classList.remove("is-done", "is-active");
+          }
+        });
+
+        /* Progress bar fill */
+        if (fill && timeline) {
+          const tlTop = tlRect.top;
+          const tlHeight = timeline.offsetHeight;
+          const scrolled = Math.max(0, Math.min(1, (-tlTop + trigger) / tlHeight));
+          fill.style.height = (scrolled * 100) + "%";
+        }
+
+        /* Sync top progress dots */
+        ppSteps.forEach((dot, i) => {
+          dot.classList.remove("is-active", "is-done");
+          if (i < activeIdx) dot.classList.add("is-done");
+          else if (i === activeIdx) dot.classList.add("is-active");
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveStep, { passive: true });
+      updateActiveStep();
+
+      /* Click dot → scroll to step */
+      ppSteps.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          const target = document.getElementById("step-" + i);
+          if (target) target.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+      });
+
+      /* ── EXPAND / COLLAPSE STEP CARDS ── */
+      items.forEach(item => {
+        const card = item.querySelector(".tl-card");
+        const toggle = item.querySelector(".tl-toggle");
+
+        function toggleExpand() {
+          const expanded = item.classList.toggle("is-expanded");
+          card.setAttribute("aria-expanded", String(expanded));
+        }
+
+        toggle?.addEventListener("click", (e) => {
+          e.stopPropagation();
+          toggleExpand();
+        });
+
+        /* Keyboard support on card */
+        card.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleExpand();
+          }
+        });
+      });
+
+      /* ── FAQ SMOOTH OPEN/CLOSE ── */
+      document.querySelectorAll(".faq-question").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const item = btn.closest(".faq-item");
+          const isOpen = item.classList.contains("is-open");
+
+          /* Close all */
+          document.querySelectorAll(".faq-item.is-open").forEach(open => {
+            open.classList.remove("is-open");
+            open.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+          });
+
+          /* Open clicked if it was closed */
+          if (!isOpen) {
+            item.classList.add("is-open");
+            btn.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
+
+    })();
+  </script>
+
+</body>
+
+</html>

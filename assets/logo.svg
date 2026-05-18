@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 132" role="img" aria-labelledby="title desc">
+  <title id="title">Jayam Publicity</title>
+  <desc id="desc">Jayam Publicity wordmark</desc>
+  <rect width="520" height="132" fill="#0a0a08"/>
+  <path d="M20 96h480v16H20z" fill="#e8431a"/>
+  <text x="18" y="78" fill="#f5f0e8" font-family="Arial Black, Arial, sans-serif" font-size="64" font-weight="900" letter-spacing="1">JAYAM</text>
+  <text x="284" y="79" fill="#e8431a" font-family="Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="8">PUBLICITY</text>
+</svg>
