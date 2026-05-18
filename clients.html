@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -58,9 +58,9 @@
   </script>
 
   <style>
-    /* ── CLIENTS PAGE SCOPED STYLES ── */
+    /* â”€â”€ CLIENTS PAGE SCOPED STYLES â”€â”€ */
 
-    /* ── TICKER ── */
+    /* â”€â”€ TICKER â”€â”€ */
     .client-ticker {
       overflow: hidden;
       border-block: 1px solid var(--line);
@@ -108,7 +108,7 @@
       }
     }
 
-    /* ── FILTER TABS ── */
+    /* â”€â”€ FILTER TABS â”€â”€ */
     .filter-tabs {
       display: flex;
       flex-wrap: wrap;
@@ -164,7 +164,7 @@
       color: var(--amber);
     }
 
-    /* ── CLIENT GRID ── */
+    /* â”€â”€ CLIENT GRID â”€â”€ */
     .client-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -260,7 +260,7 @@
       display: none;
     }
 
-    /* ── SPOTLIGHT CARDS ── */
+    /* â”€â”€ SPOTLIGHT CARDS â”€â”€ */
     .spotlight-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -373,7 +373,7 @@
       font-weight: 700;
     }
 
-    /* ── TRUST STRIP ── */
+    /* â”€â”€ TRUST STRIP â”€â”€ */
     .trust-strip {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -411,7 +411,7 @@
       line-height: 1.45;
     }
 
-    /* ── MOBILE ── */
+    /* â”€â”€ MOBILE â”€â”€ */
     @media (max-width: 768px) {
       .spotlight-grid {
         grid-template-columns: 1fr;
@@ -494,7 +494,7 @@
         <p class="eyebrow">Clients</p>
         <h1>Brands That Trusted<br>Pondicherry's Streets to Us</h1>
         <p class="lead">Jayam works across FMCG, pharma, retail, real estate, education, government, hospitality, and
-          local commerce — campaigns that need strong street-level visibility.</p>
+          local commerce â€” campaigns that need strong street-level visibility.</p>
       </div>
     </section>
 
@@ -556,7 +556,7 @@
             <p class="eyebrow">Campaign Spotlight</p>
             <h2>Recent Market Moves</h2>
           </div>
-          <p>A sample of what we've executed — format, duration, and outcomes.</p>
+          <p>A sample of what we've executed â€” format, duration, and outcomes.</p>
         </div>
 
         <div class="spotlight-grid">
@@ -659,7 +659,7 @@
         <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.svg" alt="Jayam Publicity"></a>
         <p>End-to-end outdoor and integrated advertising solutions for Pondicherry.</p>
         <div class="socials">
-          <a href="mailto:teamjayam@jayampublicity.com" aria-label="Email Jayam Publicity">@</a>
+          <a href="mailto:hr@jayampublicity.com" aria-label="Email Jayam Publicity">@</a>
           <a href="https://share.google/vFJjMuUkjEhcriZox" target="_blank" rel="noopener noreferrer"
             aria-label="Google Business Profile">G</a>
           <a href="https://wa.me/919791938052" target="_blank" rel="noopener noreferrer"
@@ -693,7 +693,7 @@
         <ul>
           <li>No. 6, Rue De Chermont, Puducherry 605001</li>
           <li><a href="tel:04132348080">0413 2348080</a></li>
-          <li><a href="mailto:teamjayam@jayampublicity.com">teamjayam@jayampublicity.com</a></li>
+          <li><a href="mailto:hr@jayampublicity.com">hr@jayampublicity.com</a></li>
         </ul>
         <a class="btn btn-outline" style="margin-top:14px; display:inline-flex;"
           href="https://share.google/vFJjMuUkjEhcriZox" target="_blank" rel="noopener noreferrer">View on Google
@@ -727,7 +727,7 @@
   <script>
     (function () {
 
-      /* ── DATA ── */
+      /* â”€â”€ DATA â”€â”€ */
       const clients = [
         { name: "FMCG Brands", industry: "FMCG", desc: "Consumer goods, launches & market penetration" },
         { name: "Pharma Companies", industry: "Pharma", desc: "Healthcare visibility near clinics & pharmacies" },
@@ -768,7 +768,7 @@
 
       const industries = ["All", "FMCG", "Pharma", "Retail", "Real Estate", "Education", "Government", "Hospitality", "Finance", "Events"];
 
-      /* ── BUILD TICKER ── */
+      /* â”€â”€ BUILD TICKER â”€â”€ */
       const tickerTrack = document.getElementById("tickerTrack");
       if (tickerTrack) {
         const doubled = [...tickerItems, ...tickerItems];
@@ -777,7 +777,7 @@
         ).join("");
       }
 
-      /* ── BUILD FILTER TABS ── */
+      /* â”€â”€ BUILD FILTER TABS â”€â”€ */
       const tabsEl = document.getElementById("filterTabs");
       if (tabsEl) {
         industries.forEach(ind => {
@@ -791,7 +791,7 @@
         });
       }
 
-      /* ── BUILD CLIENT GRID ── */
+      /* â”€â”€ BUILD CLIENT GRID â”€â”€ */
       const gridEl = document.getElementById("clientGrid");
       if (gridEl) {
         clients.forEach((client, i) => {
@@ -808,7 +808,7 @@
         });
       }
 
-      /* ── FILTER LOGIC with smooth hide/show ── */
+      /* â”€â”€ FILTER LOGIC with smooth hide/show â”€â”€ */
       let activeFilter = "All";
 
       function applyFilter(industry) {
@@ -850,7 +850,7 @@
         }
       });
 
-      /* ── SCROLL-REVEAL for client cards ── */
+      /* â”€â”€ SCROLL-REVEAL for client cards â”€â”€ */
       const cardObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
