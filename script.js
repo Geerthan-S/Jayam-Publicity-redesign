@@ -27,6 +27,24 @@ function initPreloader() {
     document.body.classList.add("loaded");
     return;
   }
+
+  const isHomePage =
+    location.pathname === "/" ||
+    location.pathname.endsWith("index.html") ||
+    location.pathname.endsWith("/");
+
+  const alreadySeen = sessionStorage.getItem("jp_preloader_seen");
+
+  // Skip preloader: not the home page, OR already seen this session
+  if (!isHomePage || alreadySeen) {
+    loader.style.display = "none";
+    document.body.classList.add("loaded");
+    return;
+  }
+
+  // First visit to home page this session — show it, then mark as seen
+  sessionStorage.setItem("jp_preloader_seen", "1");
+
   window.addEventListener("load", () => {
     setTimeout(() => {
       loader.classList.add("hidden");
