@@ -33,17 +33,12 @@ function initPreloader() {
     location.pathname.endsWith("index.html") ||
     location.pathname.endsWith("/");
 
-  const alreadySeen = sessionStorage.getItem("jp_preloader_seen");
-
-  // Skip preloader: not the home page, OR already seen this session
-  if (!isHomePage || alreadySeen) {
+  // Skip preloader if not the home page
+  if (!isHomePage) {
     loader.style.display = "none";
     document.body.classList.add("loaded");
     return;
   }
-
-  // First visit to home page this session — show it, then mark as seen
-  sessionStorage.setItem("jp_preloader_seen", "1");
 
   window.addEventListener("load", () => {
     setTimeout(() => {
